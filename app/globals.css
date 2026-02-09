@@ -4,27 +4,123 @@
 
 @layer base {
   * {
-    @apply border-gray-200;
+    @apply border-oti-gray-300;
   }
+  
   body {
-    @apply bg-white text-gray-900;
+    @apply bg-white text-oti-text-primary font-sans antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-oti-navy font-bold;
   }
 }
 
 @layer components {
+  /* Container */
   .container-custom {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+    @apply max-w-container mx-auto px-6 sm:px-8 lg:px-12;
   }
   
+  /* Section Padding */
   .section-padding {
-    @apply py-16 md:py-24;
+    @apply py-16 md:py-20 lg:py-24;
   }
   
+  .section-padding-sm {
+    @apply py-12 md:py-16;
+  }
+  
+  /* Buttons */
   .btn-primary {
-    @apply bg-oti-navy hover:bg-oti-blue text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200;
+    @apply bg-oti-accent hover:bg-oti-blue text-white font-semibold py-3 px-8 rounded transition-all duration-200 inline-flex items-center justify-center gap-2;
   }
   
   .btn-secondary {
-    @apply bg-white hover:bg-oti-gray text-oti-navy font-semibold py-3 px-6 rounded-lg border-2 border-oti-navy transition-colors duration-200;
+    @apply bg-transparent hover:bg-white text-white hover:text-oti-navy font-semibold py-3 px-8 rounded border-2 border-white transition-all duration-200 inline-flex items-center justify-center gap-2;
+  }
+  
+  .btn-outline {
+    @apply bg-white hover:bg-oti-navy text-oti-navy hover:text-white font-semibold py-3 px-8 rounded border-2 border-oti-navy transition-all duration-200 inline-flex items-center justify-center gap-2;
+  }
+  
+  /* Cards */
+  .card {
+    @apply bg-white rounded-md shadow-card hover:shadow-card-hover transition-all duration-300 p-8;
+  }
+  
+  .card-bordered {
+    @apply bg-white rounded-md border border-oti-gray-300 hover:border-oti-accent transition-all duration-300 p-8;
+  }
+  
+  .card-category {
+    @apply bg-white rounded-md shadow-card hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300 p-8 border-t-4;
+  }
+  
+  /* Typography Utilities */
+  .text-display-1 {
+    @apply text-4xl md:text-5xl lg:text-display-1 font-bold leading-tight tracking-tight;
+  }
+  
+  .text-display-2 {
+    @apply text-3xl md:text-4xl lg:text-display-2 font-bold leading-tight;
+  }
+  
+  .text-heading-1 {
+    @apply text-3xl md:text-4xl lg:text-h1 font-bold;
+  }
+  
+  .text-heading-2 {
+    @apply text-2xl md:text-3xl lg:text-h2 font-bold;
+  }
+  
+  .text-heading-3 {
+    @apply text-xl md:text-2xl lg:text-h3 font-semibold;
+  }
+  
+  .text-lead {
+    @apply text-lg md:text-xl text-oti-text-secondary;
+  }
+  
+  /* Tag/Badge */
+  .tag {
+    @apply inline-block px-3 py-1 text-xs font-semibold rounded-full;
+  }
+  
+  .tag-fintech {
+    @apply bg-blue-100 text-oti-fintech;
+  }
+  
+  .tag-legal {
+    @apply bg-purple-100 text-oti-legal;
+  }
+  
+  .tag-energy {
+    @apply bg-green-100 text-oti-energy;
+  }
+  
+  .tag-health {
+    @apply bg-red-100 text-oti-health;
+  }
+  
+  /* Link Styles */
+  .link-arrow {
+    @apply text-oti-accent hover:text-oti-navy font-semibold inline-flex items-center gap-2 transition-colors duration-200;
+  }
+  
+  .link-arrow::after {
+    content: '→';
+    @apply transition-transform duration-200;
+  }
+  
+  .link-arrow:hover::after {
+    @apply translate-x-1;
   }
 }
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+

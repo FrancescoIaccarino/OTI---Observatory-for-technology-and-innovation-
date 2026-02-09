@@ -1,63 +1,85 @@
 'use client'
 
-import { motion } from 'framer-motion'
 import Link from 'next/link'
-import Image from 'next/image'
+import { motion } from 'framer-motion'
+import { ArrowRight, BookOpen } from 'lucide-react'
 
 const Hero = () => {
   return (
-    <section className="relative bg-gradient-to-br from-oti-navy to-oti-blue text-white pt-32 pb-20">
-      <div className="container-custom">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-              Observatory for Technology and Innovation
-            </h1>
-            <p className="text-xl md:text-2xl mb-4 text-gray-200">
-              A bridge between research, business, and policy
-            </p>
-            <p className="text-lg mb-8 text-gray-300">
-              Analyzing technological trends with scientific rigor to produce robust evidence and translate it into operational recommendations.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/about" className="btn-primary bg-white text-oti-navy hover:bg-gray-100">
-                Learn More
-              </Link>
-              <Link href="/scientific-committee" className="btn-secondary border-white text-white hover:bg-white hover:text-oti-navy">
-                Join Our Committee
-              </Link>
-            </div>
-          </motion.div>
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Background Image with Overlay */}
+      <div
+        className="absolute inset-0 z-0"
+        style={{
+          backgroundImage: 'url(/images/hero-bg.jpg)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+        }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-r from-oti-navy/95 via-oti-navy/90 to-oti-navy/80"></div>
+      </div>
 
+      {/* Content */}
+      <div className="container-custom relative z-10 pt-32 pb-20">
+        <div className="max-w-4xl">
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="flex justify-center"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
           >
-            <div className="relative w-full max-w-md">
-              <Image
-                src="/images/OTI.png"
-                alt="OTI Observatory"
-                width={400}
-                height={400}
-                className="w-full h-auto"
-              />
+            {/* Eyebrow */}
+            <p className="text-oti-accent font-semibold text-sm uppercase tracking-wider mb-6">
+              OTI - Observatory for Technology and Innovation
+            </p>
+
+            {/* Main Headline */}
+            <h1 className="text-display-1 text-white mb-6 text-balance">
+              A bridge between Research, Business, and Policy
+            </h1>
+
+            {/* Subheading */}
+            <p className="text-lead text-white/90 mb-10 max-w-2xl">
+              Analyzing technological trends with scientific rigor to produce robust evidence
+              and translate it into operational recommendations.
+            </p>
+
+            {/* CTAs */}
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Link
+                href="/publications"
+                className="btn-primary bg-oti-accent hover:bg-white text-white hover:text-oti-navy group"
+              >
+                <BookOpen size={20} />
+                Discover our Research
+                <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+              </Link>
+              <Link
+                href="/about"
+                className="btn-secondary"
+              >
+                About OTI
+              </Link>
             </div>
           </motion.div>
         </div>
       </div>
 
-      {/* Decorative elements */}
-      <div className="absolute bottom-0 left-0 right-0">
-        <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M0 120L60 110C120 100 240 80 360 70C480 60 600 60 720 65C840 70 960 80 1080 85C1200 90 1320 90 1380 90L1440 90V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z" fill="white"/>
-        </svg>
-      </div>
+      {/* Scroll Indicator */}
+      <motion.div
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10"
+        initial={{ opacity: 0, y: -10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.5 }}
+      >
+        <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
+          <motion.div
+            className="w-1.5 h-3 bg-white/60 rounded-full mt-2"
+            animate={{ y: [0, 12, 0] }}
+            transition={{ duration: 1.5, repeat: Infinity }}
+          />
+        </div>
+      </motion.div>
     </section>
   )
 }
