@@ -34,7 +34,7 @@ const Hero = () => {
             </p>
 
             {/* Main Headline */}
-            <h1 className="text-display-1 text-white mb-6 text-balance">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight text-white mb-6 text-balance">
               A bridge between Research, Business, and Policy
             </h1>
 

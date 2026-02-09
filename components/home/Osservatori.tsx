@@ -58,7 +58,7 @@ const Osservatori = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.6 }}
-                        className="text-heading-1 text-oti-navy mb-4"
+                        className="text-3xl md:text-4xl lg:text-5xl font-bold text-oti-navy mb-4"
                     >
                         I Nostri Osservatori
                     </motion.h2>
@@ -93,7 +93,7 @@ const Osservatori = () => {
                                         </div>
 
                                         {/* Title */}
-                                        <h3 className="text-heading-3 text-oti-navy mb-4 group-hover:text-oti-accent transition-colors">
+                                        <h3 className="text-xl md:text-2xl lg:text-3xl font-semibold text-oti-navy mb-4 group-hover:text-oti-accent transition-colors">
                                             {obs.title}
                                         </h3>
 

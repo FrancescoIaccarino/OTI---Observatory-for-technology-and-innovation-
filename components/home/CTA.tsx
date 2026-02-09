@@ -23,7 +23,7 @@ const CTA = () => {
           transition={{ duration: 0.6 }}
           className="text-center max-w-4xl mx-auto"
         >
-          <h2 className="text-display-2 text-white mb-6">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight text-white mb-6">
             Join the Scientific Committee
           </h2>
           <p className="text-lead text-white/90 mb-10 max-w-2xl mx-auto">

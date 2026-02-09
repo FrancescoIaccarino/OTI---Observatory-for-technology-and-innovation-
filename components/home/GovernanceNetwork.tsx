@@ -65,7 +65,7 @@ const GovernanceNetwork = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.6 }}
-                            className="text-heading-1 text-oti-navy mb-4"
+                            className="text-3xl md:text-4xl lg:text-5xl font-bold text-oti-navy mb-4"
                         >
                             Scientific Committee
                         </motion.h2>
@@ -138,7 +138,7 @@ const GovernanceNetwork = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.6 }}
-                            className="text-heading-2 text-oti-navy mb-4"
+                            className="text-2xl md:text-3xl lg:text-4xl font-bold text-oti-navy mb-4"
                         >
                             Our Partners
                         </motion.h2>
